@@ -1,0 +1,25 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets"
+public_folder: "assets"
+
+collections:
+  - name: "pages"
+    label: "إدارة موقع لمسات"
+    files:
+      - file: "index.html"
+        label: "الصفحة الرئيسية"
+        name: "index"
+        fields:
+          - {label: "عنوان الموقع", name: "title", widget: "string"}
+          - {label: "صورة الخلفية", name: "hero_image", widget: "image"}
+          - {label: "الباقات", name: "packages", widget: "list", fields: [
+              {label: "اسم الباقة", name: "name", widget: "string"},
+              {label: "السعر", name: "price", widget: "string"}
+            ]}
+          - {label: "خدماتنا", name: "services", widget: "list", fields: [
+              {label: "اسم الخدمة", name: "service_name", widget: "string"},
+              {label: "صورة الخدمة", name: "service_image", widget: "image"}
+            ]}
