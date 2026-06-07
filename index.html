@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مؤسسة لمسات لتنظيم الفعاليات والمناسبات</title>
+    <!-- مكتبة الأيقونات الرسمية للشعارات في الذيل -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- سكريبت الهوية لإدارة تسجيل دخول العميل للوحة التحكم -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <style>
+        /* استدعاء خطوط ملكية وأنيقة: الخط الأميري للعناوين وتايرال وكايرو للتناسق */
+        @import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,700;1,700&family=Cairo:wght@600;800&family=Tajawal:wght@400;500;700&display=swap');
+        
+        :root {
+            --primary-color: #d4af37;
+            --dark-color: #111111;
+            --light-color: #ffffff;
+            --gray-color: #f8f9fa;
+            --whatsapp-color: #25d366;
+            --phone-color: #007bb5;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Cairo', 'Tajawal', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+        }
+
+        header {
+            background-color: rgba(17, 17, 17, 0.95);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 10px 20px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-img {
+            height: 55px;
+            width: 55px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid var(--primary-color);
+            background-color: var(--light-color);
+        }
+
+        .logo {
+            color: var(--light-color);
+            font-family: 'Amiri', serif; /* خط ملكي مخصص للاسم */
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            line-height: 1.1;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .logo span {
+            color: var(--primary-color);
+            font-family: 'Cairo', sans-serif;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+            font-size: 12px;
+            display: block;
+            font-weight: 600;
+            margin-top: 4px;
+            letter-spacing: 0;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links li {
+            margin-right: 20px;
+        }
+
+        .nav-links a {
+            color: var(--light-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+            text-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--light-color);
+            padding: 0 20px;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .hero h1 {
+            font-family: 'Amiri', serif; /* خط ملكي عريض جداً للترحيب */
+            font-size: 56px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--light-color);
+            text-shadow: 0 4px 25px rgba(0,0,0,0.8);
+        }
+
+        .hero p {
+            font-size: 22px;
+            font-weight: 500;
+            margin-bottom: 35px;
+            max-width: 700px;
+            color: #f0f0f0;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .btn {
+            background: linear-gradient(135deg, var(--primary-color), #b89324);
+            color: #000;
+            padding: 14px 40px;
+            text-decoration: none;
+            font-weight: 800; /* زيادة سماكة الخط للزر */
+            font-size: 17px;
+            border-radius: 30px;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+            transition: 0.4s;
+        }
+
+        .btn:hover {
+            background: var(--light-color);
+            color: var(--dark-color);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255,255,255,0.4);
+        }
+
+        section {
+            padding: 90px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Amiri', serif;
+            font-size: 46px; /* حجم خط ملكي كبير ومميز للعناوين */
+            font-weight: 700;
+            margin-bottom: 50px;
+        }
+
+        .section-title span {
+            color: var(--primary-color);
+            font-family: 'Amiri', serif;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 120px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+            margin: 10px auto 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--light-color);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: 0.4s ease;
+            text-align: center;
+            border: 1px solid #f0f0f0;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(212, 175, 55, 0.15);
+            border-color: var(--primary-color);
+        }
+
+        .service-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .service-card:hover .service-img {
+            transform: scale(1.05);
+        }
+
+        .service-info {
+            padding: 25px;
+        }
+
+        .service-info h3 {
+            margin-bottom: 12px;
+            font-size: 22px;
+            font-weight: 800; /* تعريض خط كروت الخدمات */
+            color: var(--dark-color);
+        }
+
+        .service-info p {
+            font-size: 15px;
+            font-family: 'Tajawal', sans-serif;
+            color: #555;
+            line-height: 1.7;
+            font-weight: 500;
+        }
+
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .filter-btn {
+            background-color: var(--gray-color);
+            color: var(--dark-color);
+            border: 1px solid #ddd;
+            padding: 10px 25px;
+            font-size: 16px;
+            font-weight: 800;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: linear-gradient(135deg, var(--primary-color), #b89324);
+            color: #000;
+            border-color: var(--primary-color);
+            box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            height: 320px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            cursor: pointer;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            transition: transform 0.4s ease, opacity 0.4s ease;
+            display: block;
+        }
+
+        .gallery-item.hide {
+            display: none;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s ease;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            color: var(--light-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: 0.4s ease;
+            font-size: 24px;
+            font-family: 'Amiri', serif;
+            font-weight: bold;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        .stats-section {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 30px;
+        }
+
+        .stat-item h2 {
+            font-size: 45px;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .stat-item p {
+            font-weight: 700;
+            font-size: 17px;
+        }
+
+        .packages {
+            background-color: var(--gray-color);
+            max-width: 100%;
+        }
+
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .package-card {
+            background: var(--light-color);
+            padding: 45px 35px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            position: relative;
+            transition: 0.4s;
+            border: 1px solid #eef0f2;
+        }
+
+        .package-card h3 {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .package-card.regular { border-top: 6px solid #b0bec5; }
+        .package-card.silver { border-top: 6px solid #90a4ae; }
+        .package-card.gold { 
+            border-top: 6px solid var(--primary-color);
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.15);
+        }
+
+        .package-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .package-badge {
+            background: var(--primary-color);
+            color: #000;
+            padding: 6px 20px;
+            font-size: 14px;
+            font-weight: 800;
+            border-radius: 20px;
+            position: absolute;
+            top: -16px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .package-features {
+            list-style: none;
+            margin: 30px 0;
+            text-align: right;
+        }
+
+        .package-features li {
+            margin-bottom: 15px;
+            font-size: 16px;
+            font-family: 'Tajawal', sans-serif;
+            color: #444;
+            font-weight: 700; /* خط الميزات عريض وواضح */
+        }
+
+        .package-features li::before {
+            content: "✦ ";
+            color: var(--primary-color);
+            margin-left: 8px;
+        }
+
+        .floating-actions {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 9999;
+        }
+
+        .floating-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            font-size: 26px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: 0.3s;
+        }
+
+        .floating-btn.whatsapp {
+            background-color: var(--whatsapp-color);
+            animation: pulse 2s infinite;
+        }
+
+        .floating-btn.phone {
+            background-color: var(--phone-color);
+        }
+
+        .floating-btn:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        footer {
+            background-color: #0a0a0a;
+            color: #ffffff;
+            padding: 60px 20px 30px;
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 40px;
+            text-align: right;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .footer-section h4 {
+            color: var(--primary-color);
+            font-family: 'Amiri', serif;
+            font-size: 22px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .footer-section p {
+            color: #d0d0d0;
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        .footer-social-row {
+            max-width: 1200px;
+            margin: 40px auto 20px;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 20px;
+        }
+
+        .footer-social-icon {
+            font-size: 26px;
+            color: #ffffff;
+            text-decoration: none;
+            transition: 0.3s ease;
+        }
+
+        .footer-social-icon:hover {
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        .footer-copyright {
+            text-align: center;
+            color: #666666;
+            font-size: 13px;
+            margin-top: 20px;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        @media (max-width: 992px) {
+            .nav-links li { display: block !important; }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 36px; }
+            .hero p { font-size: 18px; }
+            .package-card.gold { transform: none; }
+            .logo { font-size: 24px; }
+            .footer-container { text-align: center; flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo-container">
+                <img src="https://i.postimg.cc/jqv7Lzv9/IMG-20260606-WA0022(1).jpg" alt="شعار مؤسسة لمسات لتنظيم الفعاليات" class="logo-img">
+                <div class="logo">مؤسسة لمسات <span>لتنظيم الفعاليات والمناسبات</span></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#services">خدماتنا</a></li>
+                <li><a href="#gallery">أعمالنا</a></li>
+                <li><a href="#packages">الباقات</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section id="home" class="hero" style="margin-top: 60px; background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80');">
+        <h1>مؤسسة لمسات لتنظيم الفعاليات والمناسبات</h1>
+        <p>نخطط، ننسق، وندير فعالياتكم ومناسباتكم بأعلى معايير الإبداع والفخامة لتترك أثراً لا يُنسى.</p>
+        <a href="#gallery" class="btn">شاهد أعمالنا الحقيقية</a>
+    </section>
+
+    <div class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-item"><h2>+150</h2><p>فعالية ومؤتمر تم تنظيمها</p></div>
+            <div class="stat-item"><h2>+400</h2><p>حفل ومناسبة منسقة</p></div>
+            <div class="stat-item"><h2>100%</h2><p>احترافية وإتقان في التنفيذ</p></div>
+        </div>
+    </div>
+
+    <section id="services">
+        <h2 class="section-title">خدماتنا <span>الاحترافية</span></h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=500&q=80" class="service-img" alt="كوش ومسارح">
+                <div class="service-info">
+                    <h3>كوش ومسارح</h3>
+                    <p>تصميم وتنفيذ أحدث الكوش والمسارح الملكية بلمسات إبداعية وإضاءة سينمائية مذهلة.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=500&q=80" class="service-img" alt="تصوير">
+                <div class="service-info">
+                    <h3>تصوير</h3>
+                    <p>توثيق رقمي فوتوغرافي وفيديو بأحدث الكاميرات وطواقم محترفة لإخراج سينمائي متكامل.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1469371670807-013ccf25f16a?auto=format&fit=crop&w=500&q=80" class="service-img" alt="تنسيق">
+                <div class="service-info">
+                    <h3>تنسيق</h3>
+                    <p>تنسيق شامل للمدخل، القاعات، الطاولات بالورود الطبيعية والشموع وكل ما يضفي فخامة للمكان.</p>
+                </div>
+            </div>
+            <!-- الخدمة الجديدة -->
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=500&q=80" class="service-img" alt="تنفيذ شيلات وزفات">
+                <div class="service-info">
+                    <h3>تنفيذ شيلات وزفات بأسماء</h3>
+                    <p>نقدم خدمة تنفيذ وتصميم الشيلات والزفات الحصرية بأسماء العرسان وبأصوات احترافية لتعزيز جمال مناسبتكم.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=500&q=80" class="service-img" alt="تنظيم المعارض والمؤتمرات">
+                <div class="service-info">
+                    <h3>تنظيم المعارض والمؤتمرات</h3>
+                    <p>تخطيط وإدارة وتجهيز المؤتمرات والملتقيات الرسمية والتجارية بأحدث التقنيات اللوجستية.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=500&q=80" class="service-img" alt="الفعاليات والترفيه">
+                <div class="service-info">
+                    <h3>الفعاليات والترفيه</h3>
+                    <p>إقامة المهرجانات، الأنشطة الترفيهية، وفعاليات الشركات الكبرى بأساليب مبتكرة وتجهيزات متكاملة.</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=500&q=80" class="service-img" alt="إدارة الحملات التسويقية">
+                <div class="service-info">
+                    <h3>إدارة الحملات التسويقية</h3>
+                    <p>صناعة وتوجيه الحملات الإعلانية المرافقة للفعاليات لضمان أعلى نسبة حضور ونجاح جماهيري.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <h2 class="section-title">من <span>أعمالنا الحقيقية</span></h2>
+        
+        <div class="filter-buttons">
+            <button class="filter-btn active" onclick="filterGallery('all')">الكل</button>
+            <button class="filter-btn" onclick="filterGallery('stages')">مسارح</button>
+            <button class="filter-btn" onclick="filterGallery('kosha')">كوش</button>
+            <button class="filter-btn" onclick="filterGallery('others')">أعمال أخرى</button>
+        </div>
+        
+        <div class="gallery-grid">
+            <div class="gallery-item" data-category="stages">
+                <img src="https://i.postimg.cc/xdqs4f8N/IMG-20260606-WA0024.jpg" alt="تصميم مسرح فاخر">
+                <div class="gallery-overlay">تصميم وإضاءة المسرح</div>
+            </div>
+
+            <div class="gallery-item" data-category="kosha">
+                <img src="https://i.postimg.cc/JhyqQpYx/IMG-20260606-WA0030.jpg" alt="تنسيق كوشة ملكية">
+                <div class="gallery-overlay">تنسيق كوشة ملكية فخمة</div>
+            </div>
+
+            <div class="gallery-item" data-category="others">
+                <img src="https://images.unsplash.com/photo-1505232458627-a72726f5b1c0?auto=format&fit=crop&w=600&q=80" alt="تنسيق طاولات وإضاءة">
+                <div class="gallery-overlay">تنسيق طاولات وإضاءة القاعات</div>
+            </div>
+
+            <div class="gallery-item" data-category="others">
+                <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=600&q=80" alt="تجهيز مداخل استقبال">
+                <div class="gallery-overlay">تجهيز ومدخل استقبال الضيوف</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="packages" class="packages">
+        <h2 class="section-title" style="padding-top: 40px;">باقات <span>التنظيم</span></h2>
+        <div class="packages-grid">
+            <div class="package-card regular">
+                <h3>الباقة العادية</h3>
+                <ul class="package-features">
+                    <li>تنسيق قياسي متميز للمناسبة.</li>
+                    <li>إضاءة وتجهيزات صوتية متكاملة.</li>
+                    <li>تصوير فوتوغرافي وتغطية أساسية.</li>
+                </ul>
+                <a href="https://wa.me/966551129009?text=حجز_العادية" target="_blank" class="btn" style="background:#111; color:#fff;">طلب الباقة</a>
+            </div>
+
+            <div class="package-card silver">
+                <h3>الباقة الفضية</h3>
+                <ul class="package-features">
+                    <li>تنسيق عصري متطور للقاعات والمعارض.</li>
+                    <li>مؤثرات بصرية وإضاءة ذكية متكاملة.</li>
+                    <li>فريق تصوير فوتوغرافي + فيديو بدقة عالية.</li>
+                </ul>
+                <a href="https://wa.me/966551129009?text=حجز_الفضية" target="_blank" class="btn" style="background:#90a4ae; color:#000;">طلب الباقة</a>
+            </div>
+
+            <div class="package-card gold">
+                <div class="package-badge">الأكثر فخامة</div>
+                <h3>الباقة الذهبية الملكية</h3>
+                <ul class="package-features">
+                    <li>تنظيم وإدارة شاملة VIP بأعلى المعايير.</li>
+                    <li>تغطية إعلامية وتصوير 4K مع ألبوم ملكي.</li>
+                    <li>مؤثرات بصرية كاملة (ليزر، شرار، وبخار كثيف).</li>
+                    <li>خطة تسويقية وترويجية مرافقة للفعالية.</li>
+                </ul>
+                <a href="https://wa.me/966551129009?text=حجز_الذهبية" target="_blank" class="btn">طلب الباقة الملكية</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="floating-actions">
+        <a href="https://wa.me/966551129009?text=مرحباً%20لمسات،%20أود%20الاستفسار%20عن%20خدماتكم" class="floating-btn whatsapp" target="_blank">💬</a>
+        <a href="tel:966551129009" class="floating-btn phone">📞</a> 
+        <a href="mailto:Abokhald1985@hotmail.com" class="floating-btn email">✉️</a>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>العنوان</h4>
+                <p>المملكة العربية السعودية</p>
+                <p>الرياض - أسواق مكة التجارية</p>
+            </div>
+            
+            <div class="footer-section">
+                <h4>أرقام التواصل التالية</h4>
+                <p>0551129009</p>
+                <p>0561129009</p>
+                <p>البريد الإلكتروني: abokhald1985@hotmail.com</p>
+            </div>
+        </div>
+
+        <div class="footer-social-row">
+            <a href="https://www.instagram.com/abokhald1985" class="footer-social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@abokhvui73f?_r=1&_t=ZS-96y3orm1K5s" class="footer-social-icon" target="_blank"><i class="fab fa-tiktok"></i></a>
+            <a href="https://youtube.com/@0551129009?si=P3hL3AUVxzyBtOpK" class="footer-social-icon" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://wa.me/966561129009" class="footer-social-icon" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" class="footer-social-icon" target="_blank"><i class="fab fa-x-twitter"></i></a> 
+            <a href="https://www.snapchat.com/add/lamasthaflat?share_id=IcciQde6-Lk&locale=ar-AE" class="footer-social-icon" target="_blank"><i class="fab fa-snapchat"></i></a>
+        </div>
+
+        <div class="footer-copyright">
+            All rights reserved, Lamasat events © 2026
+        </div>
+    </footer>
+
+    <script>
+        function filterGallery(category) {
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            if (event && event.target) {
+                event.target.classList.add('active');
+            }
+
+            const items = document.querySelectorAll('.gallery-item');
+            items.forEach(item => {
+                if (category === 'all') {
+                    item.classList.remove('hide');
+                } else {
+                    if (item.getAttribute('data-category') === category) {
+                        item.classList.remove('hide');
+                    } else {
+                        item.classList.add('hide');
+                    }
+                }
+            });
+        }
+
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", user => {
+                if (!user) {
+                    window.netlifyIdentity.on("login", () => {
+                        document.location.href = "/admin/";
+                    });
+                }
+            });
+        }
+    </script>
+</body>
+</html>
