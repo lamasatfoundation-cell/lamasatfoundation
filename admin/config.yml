@@ -1,25 +1,39 @@
 backend:
   name: git-gateway
+  repo: lamasat-foundation-cell/lamasat-foundation.github.io
   branch: main
 
 media_folder: "assets"
 public_folder: "assets"
 
 collections:
-  - name: "pages"
-    label: "إدارة موقع لمسات"
+  # 1. إعدادات الصفحة الرئيسية (العنوان والخلفية)
+  - name: "settings"
+    label: "إعدادات الصفحة الرئيسية"
     files:
       - file: "index.html"
-        label: "الصفحة الرئيسية"
+        label: "تعديل الواجهة"
         name: "index"
         fields:
-          - {label: "عنوان الموقع", name: "title", widget: "string"}
-          - {label: "صورة الخلفية", name: "hero_image", widget: "image"}
-          - {label: "الباقات", name: "packages", widget: "list", fields: [
-              {label: "اسم الباقة", name: "name", widget: "string"},
-              {label: "السعر", name: "price", widget: "string"}
-            ]}
-          - {label: "خدماتنا", name: "services", widget: "list", fields: [
-              {label: "اسم الخدمة", name: "service_name", widget: "string"},
-              {label: "صورة الخدمة", name: "service_image", widget: "image"}
-            ]}
+          - {label: "عنوان الموقع الرئيسي", name: "title", widget: "string"}
+          - {label: "خلفية الموقع (Hero Image)", name: "hero_image", widget: "image"}
+
+  # 2. الباقات
+  - name: "packages"
+    label: "إدارة الباقات"
+    folder: "content/packages"
+    create: true
+    fields:
+      - {label: "اسم الباقة", name: "title", widget: "string"}
+      - {label: "السعر", name: "price", widget: "string"}
+      - {label: "مميزات الباقة", name: "features", widget: "list"}
+
+  # 3. الخدمات (كوش، مسارح، أعمال أخرى)
+  - name: "services"
+    label: "الخدمات"
+    folder: "content/services"
+    create: true
+    fields:
+      - {label: "اسم العمل", name: "title", widget: "string"}
+      - {label: "نوع القسم", name: "category", widget: "select", options: ["كوش", "مسارح", "أعمال أخرى"]}
+      - {label: "صورة العمل", name: "image", widget: "image"}
