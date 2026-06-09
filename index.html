@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -642,38 +644,25 @@
         </div>
     </section>
 
-    <section id="gallery">
-        <h2 class="section-title">من <span>أعمالنا الحقيقية</span></h2>
-        
-        <div class="filter-buttons">
-            <button class="filter-btn active" onclick="filterGallery('all')">الكل</button>
-            <button class="filter-btn" onclick="filterGallery('stages')">مسارح</button>
-            <button class="filter-btn" onclick="filterGallery('kosha')">كوش</button>
-            <button class="filter-btn" onclick="filterGallery('others')">أعمال أخرى</button>
+<section id="gallery">
+    <h2 class="section-title">من <span>أعمالنا الحقيقية</span></h2>
+    
+    <div class="filter-buttons">
+        <button class="filter-btn active" onclick="filterGallery('all')">الكل</button>
+        <button class="filter-btn" onclick="filterGallery('stages')">مسارح</button>
+        <button class="filter-btn" onclick="filterGallery('kosha')">كوش</button>
+        <button class="filter-btn" onclick="filterGallery('others')">أعمال أخرى</button>
+    </div>
+    
+    <div class="gallery-grid">
+        {% for item in site.gallery %}
+        <div class="gallery-item" data-category="{{ item.category }}">
+            <img src="{{ item.image }}" alt="{{ item.title }}">
+            <div class="gallery-overlay">{{ item.title }}</div>
         </div>
-        
-        <div class="gallery-grid">
-            <div class="gallery-item" data-category="stages">
-                <img src="https://i.postimg.cc/xdqs4f8N/IMG-20260606-WA0024.jpg" alt="تصميم مسرح فاخر">
-                <div class="gallery-overlay">تصميم وإضاءة المسرح</div>
-            </div>
-
-            <div class="gallery-item" data-category="kosha">
-                <img src="https://i.postimg.cc/JhyqQpYx/IMG-20260606-WA0030.jpg" alt="تنسيق كوشة ملكية">
-                <div class="gallery-overlay">تنسيق كوشة ملكية فخمة</div>
-            </div>
-
-            <div class="gallery-item" data-category="others">
-                <img src="https://images.unsplash.com/photo-1505232458627-a72726f5b1c0?auto=format&fit=crop&w=600&q=80" alt="تنسيق طاولات وإضاءة">
-                <div class="gallery-overlay">تنسيق طاولات وإضاءة القاعات</div>
-            </div>
-
-            <div class="gallery-item" data-category="others">
-                <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=600&q=80" alt="تجهيز مداخل استقبال">
-                <div class="gallery-overlay">تجهيز ومدخل استقبال الضيوف</div>
-            </div>
-        </div>
-    </section>
+        {% endfor %}
+    </div>
+</section>    
 
     <section id="packages" class="packages">
         <h2 class="section-title" style="padding-top: 40px;">باقات <span>التنظيم</span></h2>
