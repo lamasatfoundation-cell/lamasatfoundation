@@ -1,49 +1,17 @@
 backend:
   name: git-gateway
-  repo: lamasat-foundation-cell/lamasat-foundation.github.io
   branch: main
 
 media_folder: "assets/images"
 public_folder: "/assets/images"
 
 collections:
-  # 1. إعدادات الصفحة الرئيسية (العنوان والخلفية)
-  - name: "settings"
-    label: "إعدادات الصفحة الرئيسية"
-    files:
-      - file: "index.html"
-        label: "تعديل الواجهة"
-        name: "index"
-        fields:
-          - {label: "عنوان الموقع الرئيسي", name: "title", widget: "string"}
-          - {label: "خلفية الموقع (Hero Image)", name: "hero_image", widget: "image"}
-
-  # 2. الباقات
-  - name: "packages"
-    label: "إدارة الباقات"
-    folder: "content/packages"
-    create: true
-    fields:
-      - {label: "اسم الباقة", name: "title", widget: "string"}
-      - {label: "السعر", name: "price", widget: "string"}
-      - {label: "مميزات الباقة", name: "features", widget: "list"}
-
-  # 3. الخدمات (كوش، مسارح، أعمال أخرى)
-  - name: "services"
-    label: "الخدمات"
-    folder: "content/services"
-    create: true
-    fields:
-      - {label: "اسم العمل", name: "title", widget: "string"}
-      - {label: "نوع القسم", name: "category", widget: "select", options: ["كوش", "مسارح", "أعمال أخرى"]}
-      - {label: "صورة العمل", name: "image", widget: "image"}
-  # 4. معرض الأعمال
   - name: "gallery"
     label: "معرض الأعمال"
-    folder: "content/gallery"
+    folder: "_gallery"
     create: true
+    slug: "{{slug}}"
     fields:
       - {label: "العنوان", name: "title", widget: "string"}
+      - {label: "الصورة", name: "image", widget: "image"}
       - {label: "التصنيف", name: "category", widget: "select", options: ["stages", "kosha", "others"]}
-      - {label: "صورة العمل", name: "image", widget: "image"}
-      
