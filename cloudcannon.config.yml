@@ -1,15 +1,27 @@
 paths:
-  static: ''
   uploads: assets/images
+  static: ''
+collections_config:
+  pages:
+    path: ''
+    icon: wysiwyg
+    disable_url: false
+    documentation:
+      url: /assets/img-20260606-wa0017.jpg
+      text: كوش
+      icon:
+    disable_add: false
+    disable_add_folder: false
+    disable_file_actions: false
+  admin:
+    path: admin
+    icon: ad
+    disable_url: false
+    disable_add: false
+    disable_add_folder: false
+    disable_file_actions: false
 timezone: Asia/Aden
 markdown:
   engine: commonmark
   options:
     html: true
-collections_config:
-  pages:
-    path: ''
-    icon: wysiwyg
-  admin:
-    path: admin
-    icon: ad
