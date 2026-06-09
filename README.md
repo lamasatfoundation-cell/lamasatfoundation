@@ -1,2 +1,2 @@
-# lamasat-foundation.github.io
+# lamasat-foundation
 الموقع الرسمي لمؤسسة لمسات للفعاليات والمناسبات
