@@ -4,12 +4,23 @@ paths:
 collections_config:
   pages:
     path: ''
-    icon: wysiwyg
+    name: 'خالد '
+    icon: 10mp
     disable_url: false
     documentation:
       url: /assets/img-20260606-wa0017.jpg
       text: كوش
       icon:
+    preview:
+      text:
+        - key:
+      subtext:
+      icon:
+      icon_color:
+      icon_background_color:
+      image:
+      metadata:
+      gallery:
     disable_add: false
     disable_add_folder: false
     disable_file_actions: false
@@ -20,6 +31,8 @@ collections_config:
     disable_add: false
     disable_add_folder: false
     disable_file_actions: false
+editor:
+  default_path:
 timezone: Asia/Aden
 markdown:
   engine: commonmark
