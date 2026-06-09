@@ -37,3 +37,13 @@ collections:
       - {label: "اسم العمل", name: "title", widget: "string"}
       - {label: "نوع القسم", name: "category", widget: "select", options: ["كوش", "مسارح", "أعمال أخرى"]}
       - {label: "صورة العمل", name: "image", widget: "image"}
+  # 4. معرض الأعمال
+  - name: "gallery"
+    label: "معرض الأعمال"
+    folder: "content/gallery"
+    create: true
+    fields:
+      - {label: "العنوان", name: "title", widget: "string"}
+      - {label: "التصنيف", name: "category", widget: "select", options: ["stages", "kosha", "others"]}
+      - {label: "صورة العمل", name: "image", widget: "image"}
+      
