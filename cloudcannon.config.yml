@@ -1,0 +1,15 @@
+paths:
+  static: ''
+  uploads: assets/images
+timezone: Asia/Aden
+markdown:
+  engine: commonmark
+  options:
+    html: true
+collections_config:
+  pages:
+    path: ''
+    icon: wysiwyg
+  admin:
+    path: admin
+    icon: ad
