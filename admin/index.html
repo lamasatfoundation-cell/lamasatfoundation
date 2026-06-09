@@ -3,12 +3,11 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>لوحة التحكم</title>
-    <!-- هذا السكريبت هو المحرك للوحة التحكم -->
+    <title>Content Manager</title>
+    <link href="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.css" rel="stylesheet" />
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   </head>
   <body>
-    <!-- هذا السكريبت ضروري جداً لربط الهوية -->
     <script>
       if (window.netlifyIdentity) {
         window.netlifyIdentity.on("init", user => {
