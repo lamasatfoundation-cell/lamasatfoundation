@@ -1,0 +1,3 @@
+paths:
+  uploads: assets/images
+  static: assets
