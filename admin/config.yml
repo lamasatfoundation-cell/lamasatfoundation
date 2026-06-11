@@ -1,0 +1,15 @@
+backend:
+  name: git-gateway
+  branch: main
+media_folder: "assets/images"
+public_folder: "/assets/images"
+collections:
+  - name: "gallery"
+    label: "معرض الأعمال"
+    folder: "_data/gallery"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "العنوان", name: "title", widget: "string"}
+      - {label: "الصورة", name: "image", widget: "image"}
+      - {label: "التصنيف", name: "category", widget: "select", options: ["stages", "kosha", "others"]}
