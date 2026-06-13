@@ -4,8 +4,10 @@ backend:
   branch: main
   base_url: https://lamasat-foundation-github-io.vercel.app/api
 local_backend: true
+
 media_folder: "public/images"
 public_folder: "/images"
+
 collections:
   - name: "pages"
     label: "Pages"
