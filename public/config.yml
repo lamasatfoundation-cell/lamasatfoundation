@@ -2,6 +2,7 @@ backend:
   name: github
   repo: lamasatfoundation-cell/lamasat-foundation.github.io
   branch: main
+  base_url: https://lamasat-foundation-github-io.vercel.app
 local_backend: true
 
 media_folder: "public/images"
