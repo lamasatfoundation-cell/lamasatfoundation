@@ -1,5 +1,7 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: lamasatfoundation-cell/lamasat-foundation.github.io
+  branch: main
   branch: main
 media_folder: "assets/images"
 public_folder: "/assets/images"
