@@ -2,3 +2,4 @@ backend:
   name: github
   repo: lamasatfoundation-cell/lamasat-foundation.github.io
   branch: main
+local_backend: true
