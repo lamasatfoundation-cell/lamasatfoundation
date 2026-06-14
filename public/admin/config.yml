@@ -1,3 +1,16 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: lamasatfoundation-cell/lamasat-foundation.github.io
   branch: main
+
+media_folder: "uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "blog"
+    label: "Blog"
+    folder: "content/blog"
+    create: true
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
