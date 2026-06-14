@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: https://lamasatfoundation-cell.github.io/lamasat-foundation.github.io/
+  repo: "Lamasatfoundation-cell/lamasat-foundation.github.io"
   branch: main
 
 media_folder: "assets/images"
