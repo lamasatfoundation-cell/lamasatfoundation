@@ -1,3 +1,4 @@
+site_url: https://lamasatfoundation-cell.github.io/lamasat-foundation.github.io/
 backend:
   name: github
   repo: Lamasatfoundation-cell/lamasat-foundation.github.io
