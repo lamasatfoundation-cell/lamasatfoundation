@@ -1,9 +1,11 @@
 backend:
   name: github
-  repo: "Lamasatfoundation-cell/lamasat-foundation.github.io"
+  repo: Lamasatfoundation-cell/lamasat-foundation.github.io
   branch: main
+
 media_folder: "assets/images"
-public_folder: "/assets/images"
+public_folder: "assets/images"
+
 collections:
   - name: "blog"
     label: "Blog"
