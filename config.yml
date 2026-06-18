@@ -1,7 +1,7 @@
-site_url: https://lamasatfoundation-cell.github.io/lamasat-foundation.github.io/
+site_url: https://lamasatfoundation.netlify.app
 backend:
   name: github
-  repo: Lamasatfoundation-cell/lamasat-foundation.github.io
+  repo: Lamasatfoundation-cell/lamasatfoundation
   branch: main
 
 media_folder: "assets/images"
@@ -14,4 +14,5 @@ collections:
     create: true
     fields:
       - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Body", name: "body", widget: "markdown"}
