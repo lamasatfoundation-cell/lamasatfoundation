@@ -1,9 +1,7 @@
 site_url: https://lamasatfoundation.netlify.app
 backend:
-  name: github
-  repo: Lamasatfoundation-cell/lamasatfoundation
+  name: git-gateway
   branch: main
-
 media_folder: "assets/images"
 public_folder: "assets/images"
 
