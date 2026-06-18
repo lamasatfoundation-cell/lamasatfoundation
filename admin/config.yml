@@ -2,7 +2,6 @@ site_url: https://lamasatfoundation.netlify.app
 backend:
   name: git-gateway
   branch: main
-  site_domain: lamasatfoundation.netlify.app
 media_folder: "assets/images"
 public_folder: "assets/images"
 
